@@ -1,0 +1,22 @@
+<div class="container marg-top-20">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 form-alignment">
+            <form [formGroup]="userLoginFormData" class="new-poc-form" (ngSubmit)="login()">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="user_email" id="user_email" formControlName="user_email" placeholder="Enter your email. ." required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="user_password" id="user_password" formControlName="user_password" placeholder="Enter your password. ." required>
+                </div>
+                <div class="clearfix"></div>
+                <p class="form-submit">
+                    <button [disabled]="userLoginFormData.pristine ||
+                    userLoginFormData.invalid" class="btn btn-primary" type="submit" id="submit" name="submit">Login</button>
+                </p>
+            </form>
+            <div [hidden]="logIncorrect" class="alert alert-danger">
+                Email or password incorrect. .
+            </div>
+        </div>
+    </div>
+</div>

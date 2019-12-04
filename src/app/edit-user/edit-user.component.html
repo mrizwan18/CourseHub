@@ -1,0 +1,74 @@
+<div class="inner-main">
+    <div class="container marg-top-20">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 form-alignment">
+                <div class="container">
+                    <form #rf [formGroup]="userFormControl" (ngSubmit)="update_user()" novalidate>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="user_name" id="user_name" formControlName="user_name" placeholder="Enter name. .">
+                        </div>
+                        <div *ngIf="userFormControl.controls['user_name'].invalid && (userFormControl.controls['user_name'].dirty || userFormControl.controls['user_name'].touched)" class="alert alert-danger">
+                            <div *ngIf="userFormControl.controls['user_name'].errors.required">
+                                Name is required. .
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="user_email" id="user_email" formControlName="user_email" placeholder="Enter email. .">
+                        </div>
+                        <div *ngIf="userFormControl.controls['user_email'].invalid && userFormControl.controls['user_email'].touched" class="alert alert-danger">
+                            Email is required. .
+                        </div>
+                        <div class="form-group">
+                            <select name="user_role" formControlName="user_role" class="form-control">
+                                    <option value="">-- select user role --</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                        </div>
+                        <div *ngIf="userFormControl.controls['user_role'].invalid && (userFormControl.controls['user_role'].dirty || userFormControl.controls['user_role'].touched)" class="alert alert-danger">
+                            <div *ngIf="userFormControl.controls['user_role'].errors.required">
+                                User role not selected. .
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="user_password" id="user_password" formControlName="user_password" placeholder="Enter password. .">
+                        </div>
+                        <div *ngIf="userFormControl.controls['user_password'].invalid && userFormControl.controls['user_password'].touched" class="alert alert-danger">
+                            Password is required. .
+                        </div>
+                        <div class="form-group">
+                            <input (change)="get_image($event.target.files)" type="file" class="form-control" name="user_avatar" formControlName="user_avatar">
+                        </div>
+                        <div *ngIf="userFormControl.hasError('fileMaxSize', ['user_avatar'])" class="alert alert-danger" role="alert">
+                            Maximum size of file is 2MB
+                        </div>
+                        <div class="form-group">
+                            <div class="radio">
+                                Status:
+                                <label>
+                                        <input type="radio"  name="" value="active" checked="checked" formControlName="user_status">
+                                        Active
+                                    </label>
+                                <label>
+                                        <input class="status-left-margin" type="radio" name="" value="inactive" formControlName="user_status">
+                                        Inactive
+                                    </label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="form-submit">
+                            <button [disabled]="userFormControl.invalid" class="btn btn-primary" type="submit" id="submit" name="submit">Update</button>
+                        </p>
+                    </form>
+                    <div *ngIf="isRegister">
+                        <div class="col-12 alert-pad">
+                            <p class="alert alert-success" role="alert">
+                                <span>{{successMessage}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
