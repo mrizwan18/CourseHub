@@ -5,15 +5,8 @@
   --------------------------------------------------------------*/
 
 header {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0072ff+0,3ca2ea+100 */
-    background: #0072ff;
-    /* Old browsers */
-    background: -moz-linear-gradient(45deg, #0072ff 0%, #3ca2ea 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #0072ff 0%, #3ca2ea 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #0072ff 0%, #3ca2ea 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3B97D3+0,3ca2ea+100 */
+    background: #353434;
 }
 
 header .navbar-brand {
