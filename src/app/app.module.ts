@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     LoginComponent,
     ListUsersComponent,
     EditUserComponent,
+    AdminPanelComponent,
+    AddCourseComponent,
   ],
   imports: [
     FontAwesomeModule,

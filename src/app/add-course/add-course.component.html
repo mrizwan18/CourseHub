@@ -1,0 +1,33 @@
+<div class="inner-main">
+    <div class="container marg-top-20">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 form-alignment">
+                <div class="container">
+                    <form [formGroup]="courseFormData" class="new-poc-form" (ngSubmit)="add_course()">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="course_name" id="course_name"
+                                formControlName="course_name" placeholder="Enter Course name. ." required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="course_code" id="course_code"
+                                formControlName="course_code" placeholder="Enter Course Code. ." required>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="form-submit">
+                            <button [disabled]="courseFormData.pristine ||
+                                        courseFormData.invalid" class="btn btn-primary" type="submit" id="submit"
+                                name="submit">Add Course</button>
+                        </p>
+                    </form>
+                    <div *ngIf="isAdded">
+                        <div class="col-12 alert-pad">
+                            <p class="alert {{alertClass}}" role="alert">
+                                <span>{{successMessage}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

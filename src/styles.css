@@ -6,7 +6,7 @@
 
 header {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3B97D3+0,3ca2ea+100 */
-    background: #353434;
+    background: #fff;
 }
 
 header .navbar-brand {
@@ -34,4 +34,8 @@ header .navbar-nav .nav-link {
 .form-alignment {
     display: block;
     margin: 0 auto;
+}
+
+.btn {
+    margin: 10px;
 }
