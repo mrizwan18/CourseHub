@@ -1,24 +1,9 @@
 const mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
 
-// Define collection and schema for Course
-const coursesSchema = mongoose.Schema({
+const courseSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    course_name: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    course_code: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    registered_students: {
-        type: Number,
-    }
-});
+    name: {type: String, required: true},
+    code: {type: String, required: true}
+}); 
 
-coursesSchema.plugin(uniqueValidator);
-
-module.exports = mongoose.model('Course', coursesSchema);
+module.exports = mongoose.model('Course', courseSchema);

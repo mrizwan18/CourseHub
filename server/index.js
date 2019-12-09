@@ -5,8 +5,9 @@ const express = require('express'),
     mongoose = require('mongoose'),
     config = require('./database/DB');
 
-const usersData = require("./routes/users");
-const coursesData = require("./routes/courses");
+const userRoute = require("./routes/user");
+const courseRoute = require("./routes/course");
+const postRoute = require("./routes/post");
 
 
 
@@ -29,8 +30,9 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/uploads', express.static('uploads'));
-app.use('/users', usersData);
-app.use('/courses', coursesData);
+app.use('/user', userRoute);
+app.use('/course', courseRoute);
+app.use('/post', postRoute);
 
 // Routes which should handle requests
 const port = process.env.PORT || 4000;
